@@ -31,6 +31,11 @@
 
 ### :writing_hand: 最新博客:
 <!-- BLOG-POST-LIST:START -->
+- [深度强化学习（DRL）算法 1 —— REINFORCE](https://zhuanlan.zhihu.com/p/574479257)
+- [深度强化学习（DRL）算法 附录 4 —— 一些常用概念（KL 散度、最大熵 MDP etc.）](https://zhuanlan.zhihu.com/p/596733815)
+- [深度强化学习（DRL）算法 5 —— Twin Delayed Deep Deterministic Policy Gradient &lpar;TD3&rpar;](https://zhuanlan.zhihu.com/p/596086108)
+- [深度强化学习（DRL）算法汇总](https://zhuanlan.zhihu.com/p/595383059)
+- [深度强化学习（DRL）算法 4 —— Deep Deterministic Policy Gradient &lpar;DDPG&rpar;](https://zhuanlan.zhihu.com/p/595568507)
 <!-- BLOG-POST-LIST:END -->
 
 
