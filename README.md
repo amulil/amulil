@@ -5,6 +5,14 @@
 
 ---
 
+### :man_technologist: 关于我:
+- NLPer
+- RLer
+- 热爱编程和分享
+- 终身学习
+
+---
+
 ### :hammer_and_wrench: 语言和工具 :
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="python" alt="python" width="40" height="40"/>&nbsp;
