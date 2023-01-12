@@ -34,7 +34,7 @@
 
 ### :fire: 状态 :
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=amulil&theme=modern-lilac&border_radius=20&locale=zh_Hans&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=amulil&layout=compact&theme=vision-friendly-dark)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=amulil&layout=compact&theme=vision-friendly-dark)](https://github.com/anuraghazra/github-readme-stats)
 
 ---
 
