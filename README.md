@@ -40,8 +40,8 @@
 
 ### :writing_hand: 最新博客:
 <!-- BLOG-POST-LIST:START -->
+- [从 RLHF 到 ChatGPT](https://zhuanlan.zhihu.com/p/602990090)
 - [深度强化学习（DRL）算法 附录 6 —— NLP 回顾之预训练模型篇](https://zhuanlan.zhihu.com/p/599095755)
-- [当我们在谈论 ChatGPT 时，我们在谈论什么](https://zhuanlan.zhihu.com/p/602990090)
 - [深度强化学习（DRL）算法 附录 4 —— 一些常用概念（KL 散度、最大熵 MDP etc.）](https://zhuanlan.zhihu.com/p/596733815)
 - [深度强化学习（DRL）算法 3 —— Deep Q-learning&lpar;DQN&rpar;](https://zhuanlan.zhihu.com/p/595728811)
 - [深度强化学习（DRL）算法 附录 6 —— NLP 回顾之基础模型篇](https://zhuanlan.zhihu.com/p/597512525)
