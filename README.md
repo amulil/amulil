@@ -40,11 +40,11 @@
 
 ### :writing_hand: 最新博客:
 <!-- BLOG-POST-LIST:START -->
+- [使用 onnx 使得 embedding 生成速度提高 4 倍（和原生 sentence transformer 模型对比）](https://zhuanlan.zhihu.com/p/667642928)
 - [使用 Slurm 配置 Nvidia GPU 集群](https://zhuanlan.zhihu.com/p/666424716)
 - [深度强化学习（DRL）算法 附录 4 —— 一些常用概念（KL 散度、最大熵 MDP etc.）](https://zhuanlan.zhihu.com/p/596733815)
 - [计算机基础系列 —— 虚拟机代码翻译器（1）](https://zhuanlan.zhihu.com/p/605659386)
 - [计算机基础系列 —— 虚拟机代码翻译器（2）](https://zhuanlan.zhihu.com/p/605939105)
-- [计算机基础系列 —— 汇编器](https://zhuanlan.zhihu.com/p/605314604)
 <!-- BLOG-POST-LIST:END -->
 
 
