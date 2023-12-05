@@ -5,7 +5,7 @@
 
 ---
 
-### :man_technologist: 关于我:
+### 关于我:
 - NLPer
 - RLer
 - 热爱编程和分享
@@ -13,7 +13,7 @@
 
 ---
 
-### :hammer_and_wrench: 语言和工具 :
+### 语言和工具 :
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="python" alt="python" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-line.svg" title="c++" alt="C++" width="40" height="40"/>&nbsp;
@@ -32,13 +32,13 @@
 
 ---
 
-### :fire: 状态 :
+### 状态 :
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=amulil&theme=modern-lilac&border_radius=20&locale=zh_Hans&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
 [![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=amulil&layout=compact&theme=vision-friendly-dark)](https://github.com/anuraghazra/github-readme-stats)
 
 ---
 
-### :writing_hand: 最新博客:
+### 最新博客:
 <!-- BLOG-POST-LIST:START -->
 - [使用 nginx 提高 LLM API rps](https://zhuanlan.zhihu.com/p/669380227)
 - [使用 Slurm 配置 Nvidia GPU 集群](https://zhuanlan.zhihu.com/p/666424716)
@@ -46,5 +46,8 @@
 - [深度强化学习（DRL）算法 附录 4 —— 一些常用概念（KL 散度、最大熵 MDP etc.）](https://zhuanlan.zhihu.com/p/596733815)
 - [计算机基础系列 —— 虚拟机代码翻译器（1）](https://zhuanlan.zhihu.com/p/605659386)
 <!-- BLOG-POST-LIST:END -->
+
+### 竞赛方案开源：
+[FT-Data-Ranker 1B赛道 第 8 名](https://github.com/amulil/FT-Data-Ranker-1B-No.8)
 
 
