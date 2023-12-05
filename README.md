@@ -48,6 +48,9 @@
 <!-- BLOG-POST-LIST:END -->
 
 ### 竞赛方案开源：
-[FT-Data-Ranker 1B赛道 第 8 名](https://github.com/amulil/FT-Data-Ranker-1B-No.8)
+- [FT-Data-Ranker 1B赛道 第 8 名](https://github.com/amulil/FT-Data-Ranker-1B-No.8)
+
+### 模型开源：
+- [tao-8k](https://huggingface.co/amu/tao-8k)
 
 
