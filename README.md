@@ -40,11 +40,11 @@
 
 ### 最新博客:
 <!-- BLOG-POST-LIST:START -->
+- [DeepSpeed-Chat RLHF 阶段代码解读（0） —— 原始 PPO 代码解读](https://zhuanlan.zhihu.com/p/676514199)
 - [HuggingFace 使用指南](https://zhuanlan.zhihu.com/p/678004288)
 - [使用 nginx 提高 LLM API rps](https://zhuanlan.zhihu.com/p/669380227)
 - [使用 Slurm 配置 Nvidia GPU 集群](https://zhuanlan.zhihu.com/p/666424716)
 - [使用 onnx 使得 embedding 生成速度提高 4 倍（和原生 sentence transformer 模型对比）](https://zhuanlan.zhihu.com/p/667642928)
-- [深度强化学习（DRL）算法 附录 4 —— 一些常用概念（KL 散度、最大熵 MDP etc.）](https://zhuanlan.zhihu.com/p/596733815)
 <!-- BLOG-POST-LIST:END -->
 
 ### 竞赛方案开源：
