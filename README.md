@@ -52,5 +52,6 @@
 
 ### 模型开源：
 - [tao-8k](https://huggingface.co/amu/tao-8k)
+- [dpo-phi2](https://huggingface.co/amu/dpo-phi2)
 
 
