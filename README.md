@@ -40,11 +40,11 @@
 
 ### 最新博客:
 <!-- BLOG-POST-LIST:START -->
+- [RLAIF（0）—— DPO（Direct Preference Optimization） 原理与代码解读](https://zhuanlan.zhihu.com/p/682523322)
 - [accelerate 多卡多节点使用](https://zhuanlan.zhihu.com/p/682011109)
 - [DeepSpeed-Chat RLHF 阶段代码解读（2） —— PPO 阶段](https://zhuanlan.zhihu.com/p/676513988)
 - [DeepSpeed-Chat RLHF 阶段代码解读（1） —— 奖励函数阶段](https://zhuanlan.zhihu.com/p/675465121)
 - [使用 optimum 使得 embedding 生成速度提高 5 倍（和原生 sentence transformer 模型对比）](https://zhuanlan.zhihu.com/p/679245002)
-- [DeepSpeed-Chat RLHF 阶段代码解读（0） —— 原始 PPO 代码解读](https://zhuanlan.zhihu.com/p/676514199)
 <!-- BLOG-POST-LIST:END -->
 
 ### 竞赛方案开源：
