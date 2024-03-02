@@ -40,11 +40,11 @@
 
 ### 最新博客:
 <!-- BLOG-POST-LIST:START -->
+- [DeepSpeed-Chat RLHF 阶段代码解读（0） —— 原始 PPO 代码解读](https://zhuanlan.zhihu.com/p/676514199)
 - [使用 Slurm 配置 Nvidia GPU 集群](https://zhuanlan.zhihu.com/p/666424716)
 - [深度强化学习（DRL）算法 附录 6 —— NLP 回顾之预训练模型篇](https://zhuanlan.zhihu.com/p/599095755)
 - [使用 nginx 提高 LLM API rps](https://zhuanlan.zhihu.com/p/669380227)
 - [RLAIF（0）—— DPO（Direct Preference Optimization） 原理与代码解读](https://zhuanlan.zhihu.com/p/682523322)
-- [accelerate 多卡多节点使用](https://zhuanlan.zhihu.com/p/682011109)
 <!-- BLOG-POST-LIST:END -->
 
 ### 竞赛方案开源：
