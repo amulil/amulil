@@ -40,11 +40,11 @@
 
 ### 最新博客:
 <!-- BLOG-POST-LIST:START -->
+- [计算机基础系列 —— 从 Nand 门到 ALU（2）](https://zhuanlan.zhihu.com/p/603872878)
 - [RLAIF（0）—— DPO（Direct Preference Optimization） 原理与代码解读](https://zhuanlan.zhihu.com/p/682523322)
 - [计算机基础系列 —— 从 Nand 门到 ALU（1）](https://zhuanlan.zhihu.com/p/603494808)
 - [使用 Slurm 配置 Nvidia GPU 集群](https://zhuanlan.zhihu.com/p/666424716)
 - [DeepSpeed-Chat RLHF 阶段代码解读（2） —— PPO 阶段](https://zhuanlan.zhihu.com/p/676513988)
-- [DeepSpeed-Chat RLHF 阶段代码解读（1） —— 奖励函数阶段](https://zhuanlan.zhihu.com/p/675465121)
 <!-- BLOG-POST-LIST:END -->
 
 ### 竞赛方案开源：
