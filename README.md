@@ -40,11 +40,11 @@
 
 ### 最新博客:
 <!-- BLOG-POST-LIST:START -->
+- [使用 Slurm 配置 Nvidia GPU 集群](https://zhuanlan.zhihu.com/p/666424716)
 - [计算机基础系列 —— 虚拟机代码翻译器（2）](https://zhuanlan.zhihu.com/p/605939105)
 - [计算机基础系列 —— 虚拟机代码翻译器（1）](https://zhuanlan.zhihu.com/p/605659386)
 - [计算机基础系列 —— CPU](https://zhuanlan.zhihu.com/p/604679537)
 - [计算机基础系列 —— 汇编语言](https://zhuanlan.zhihu.com/p/604463374)
-- [计算机基础系列 —— 从 Nand 门、DFF 到 RAM](https://zhuanlan.zhihu.com/p/603923311)
 <!-- BLOG-POST-LIST:END -->
 
 ### 竞赛方案开源：
