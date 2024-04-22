@@ -40,11 +40,11 @@
 
 ### 最新博客:
 <!-- BLOG-POST-LIST:START -->
+- [使用 optimum 使得 embedding 生成速度提高 5 倍（和原生 sentence transformer 模型对比）](https://zhuanlan.zhihu.com/p/679245002)
+- [使用 onnx 使得 embedding 生成速度提高 4 倍（和原生 sentence transformer 模型对比）](https://zhuanlan.zhihu.com/p/667642928)
 - [深度强化学习（DRL）算法 附录 6 —— NLP 回顾之预训练模型篇](https://zhuanlan.zhihu.com/p/599095755)
 - [使用 Slurm 配置 Nvidia GPU 集群](https://zhuanlan.zhihu.com/p/666424716)
 - [计算机基础系列 —— 虚拟机代码翻译器（2）](https://zhuanlan.zhihu.com/p/605939105)
-- [计算机基础系列 —— 虚拟机代码翻译器（1）](https://zhuanlan.zhihu.com/p/605659386)
-- [计算机基础系列 —— CPU](https://zhuanlan.zhihu.com/p/604679537)
 <!-- BLOG-POST-LIST:END -->
 
 ### 竞赛方案开源：
