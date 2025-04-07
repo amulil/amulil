@@ -54,5 +54,6 @@
 - [tao-8k](https://huggingface.co/amu/tao-8k)
 - [dpo-phi2](https://huggingface.co/amu/dpo-phi2)
 - [spin-phi2](https://huggingface.co/amu/spin-phi2)
+- [t1-3B-grpo](https://huggingface.co/Amu/t1-3B-grpo)
 
 
