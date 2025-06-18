@@ -40,12 +40,12 @@
 
 ### 最新博客:
 <!-- BLOG-POST-LIST:START -->
-- [GPU 编程自学指南 - 02 GPU 架构浅析](https://zhuanlan.zhihu.com/p/1898878221409288805)
+- [GPU编程自学指南 - 03 分块矩阵乘法（Tiled）](https://zhuanlan.zhihu.com/p/1918791093283192915)
 - [GPU 编程自学指南](https://zhuanlan.zhihu.com/p/1895263262351815084)
+- [GPU 编程自学指南 - 02 GPU 架构浅析](https://zhuanlan.zhihu.com/p/1898878221409288805)
 - [GPU 编程自学指南 - 01 hello world](https://zhuanlan.zhihu.com/p/32719959615)
 - [Kaggle 比赛参加记录 —— Multilingual Chatbot Arena](https://zhuanlan.zhihu.com/p/19334698607)
 - [TinyAgent 之在数值计算器领域用 1.5B 小模型击败任意大模型（Lmdeploy + Qwen2.5-1.5B-Instruct）](https://zhuanlan.zhihu.com/p/18511879474)
-- [使用 optimum 使得 embedding 生成速度提高 5 倍（和原生 sentence transformer 模型对比）](https://zhuanlan.zhihu.com/p/679245002)
 <!-- BLOG-POST-LIST:END -->
 
 ### 竞赛方案开源：
