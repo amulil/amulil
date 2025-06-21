@@ -40,12 +40,12 @@
 
 ### 最新博客:
 <!-- BLOG-POST-LIST:START -->
+- [cleanvllm: 从 0 到 1 构建一个 vLLM](https://zhuanlan.zhihu.com/p/1919829961650450929)
 - [GPU编程自学指南 - 03 分块矩阵乘法（Tiled）](https://zhuanlan.zhihu.com/p/1918791093283192915)
 - [GPU 编程自学指南](https://zhuanlan.zhihu.com/p/1895263262351815084)
 - [GPU 编程自学指南 - 02 GPU 架构浅析](https://zhuanlan.zhihu.com/p/1898878221409288805)
 - [GPU 编程自学指南 - 01 hello world](https://zhuanlan.zhihu.com/p/32719959615)
 - [Kaggle 比赛参加记录 —— Multilingual Chatbot Arena](https://zhuanlan.zhihu.com/p/19334698607)
-- [TinyAgent 之在数值计算器领域用 1.5B 小模型击败任意大模型（Lmdeploy + Qwen2.5-1.5B-Instruct）](https://zhuanlan.zhihu.com/p/18511879474)
 <!-- BLOG-POST-LIST:END -->
 
 ### 竞赛方案开源：
