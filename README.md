@@ -40,12 +40,12 @@
 
 ### 最新博客:
 <!-- BLOG-POST-LIST:START -->
-- [使用 vLLM Production Stack 快速在单卡上部署多个 Embedding 模型实例](https://zhuanlan.zhihu.com/p/1933293478537832220)
 - [cleanvllm: 从 0 到 1 构建一个 vLLM](https://zhuanlan.zhihu.com/p/1919829961650450929)
 - [GPU编程自学指南 - 03 分块矩阵乘法（Tiled）](https://zhuanlan.zhihu.com/p/1918791093283192915)
 - [GPU 编程自学指南](https://zhuanlan.zhihu.com/p/1895263262351815084)
 - [GPU 编程自学指南 - 02 GPU 架构浅析](https://zhuanlan.zhihu.com/p/1898878221409288805)
 - [GPU 编程自学指南 - 01 hello world](https://zhuanlan.zhihu.com/p/32719959615)
+- [Kaggle 比赛参加记录 —— Multilingual Chatbot Arena](https://zhuanlan.zhihu.com/p/19334698607)
 <!-- BLOG-POST-LIST:END -->
 
 ### 竞赛方案开源：
