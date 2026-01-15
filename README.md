@@ -4,7 +4,7 @@
 
 <div align="center">
   <a href="https://github.com/amulil">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&pause=1000&center=true&vCenter=true&width=620&lines=NLPer+%C2%B7+RLer+%C2%B7+Open+Source+Enthusiast;Building+AGI...+Maybe?;Keep+Learning+%7C+Keep+Coding" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&pause=1000&center=true&vCenter=true&width=820&lines=NLPer+%C2%B7+RLer+%C2%B7+Open+Source+Enthusiast;Building+AGI...+Maybe?;Keep+Learning+%7C+Keep+Coding+%7C+Keep+Writing" alt="Typing SVG" />
   </a>
 </div>
 
