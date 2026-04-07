@@ -1,47 +1,101 @@
-<svg width="820" height="220" xmlns="http://www.w3.org/2000/svg">
+<svg width="820" height="360" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050505" />
+      <stop offset="100%" stop-color="#0f111a" />
+    </linearGradient>
+    
+    <!-- Glowing Ambient Orbs -->
+    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(88, 166, 255, 0.15)" />
+      <stop offset="100%" stop-color="rgba(88, 166, 255, 0)" />
+    </radialGradient>
+    <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(210, 168, 255, 0.12)" />
+      <stop offset="100%" stop-color="rgba(210, 168, 255, 0)" />
+    </radialGradient>
+
     <style>
-      .window { fill: #0d1117; stroke: #30363d; stroke-width: 1px; rx: 8px; }
+      .window { fill: url(#bgGrad); stroke: #30363d; stroke-width: 1px; rx: 12px; }
       .dot-red { fill: #ff5f56; }
       .dot-yellow { fill: #ffbd2e; }
       .dot-green { fill: #28c840; }
-      .text {
-        font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-        font-weight: 700;
-        font-size: 20px;
-        text-anchor: middle;
-      }
-      .line1 { fill: #58a6ff; opacity: 0; animation: fadeUp 0.8s ease-out 0.2s forwards; }
-      .line2 { fill: #bc8cff; opacity: 0; animation: fadeUp 0.8s ease-out 0.6s forwards; }
-      .line3 { fill: #ff7b72; opacity: 0; animation: fadeUp 0.8s ease-out 1.0s forwards; }
-      .cursor { fill: #c9d1d9; opacity: 0; animation: blink 1s step-end 1.5s infinite; }
       
-      @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); filter: drop-shadow(0 0 4px currentColor); }
+      .code-text {
+        font-family: ui-monospace, SFMono-Regular, "Cascadia Code", Menlo, Consolas, monospace;
+        font-weight: 700;
+        font-size: 16px;
+        white-space: pre;
       }
+      
+      /* Staggered Slide In Animation */
+      .line-anim {
+        opacity: 0;
+        animation: slideRight 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+      .delay-0 { animation-delay: 0.2s; }
+      .delay-1 { animation-delay: 0.4s; }
+      .delay-2 { animation-delay: 0.6s; }
+      .delay-3 { animation-delay: 0.8s; }
+      .delay-4 { animation-delay: 1.0s; }
+      .delay-5 { animation-delay: 1.2s; }
+      .delay-6 { animation-delay: 1.4s; }
+
+      .cursor {
+        fill: #58a6ff;
+        opacity: 0;
+        animation: blink 1s step-end infinite;
+        animation-delay: 2.0s; /* Start blinking after typing */
+      }
+
+      @keyframes slideRight {
+        from { opacity: 0; transform: translateX(-15px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
       @keyframes blink {
-        0%, 100% { opacity: 1; }
+        0%, 100% { opacity: 1; filter: drop-shadow(0 0 4px #58a6ff); }
         50% { opacity: 0; }
       }
+
+      /* Background panning grid */
+      .grid-group { animation: panGrid 20s linear infinite; }
+      @keyframes panGrid {
+        from { transform: translateY(0); }
+        to { transform: translateY(40px); }
+      }
     </style>
-  </defs>
-  
-  <!-- Window Background -->
-  <rect x="10" y="10" width="800" height="200" class="window" />
-  
-  <!-- Mac Window Dots -->
-  <circle cx="35" cy="30" r="6" class="dot-red" />
-  <circle cx="55" cy="30" r="6" class="dot-yellow" />
-  <circle cx="75" cy="30" r="6" class="dot-green" />
-  
-  <!-- Content (Centered) -->
-  <g transform="translate(0, 80)">
-    <text x="410" y="0" class="text line1">NLPer · RLer · Open Source Enthusiast</text>
-    <text x="410" y="40" class="text line2">Building AGI... Maybe?</text>
-    <text x="410" y="80" class="text line3">Keep Learning | Keep Coding | Keep Writing</text>
     
-    <!-- Blinking Cursor -->
-    <rect x="680" y="62" width="12" height="22" class="cursor" />
-  </g>
-</svg>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      <path d="M 0 40 L 40 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Deep Space Background & Grid -->
+  <rect width="820" height="360" class="window" />
+  
+  <svg width="820" height="360" viewBox="0 0 820 360">
+    <g class="grid-group">
+      <rect x="0" y="-40" width="820" height="440" fill="url(#grid)" />
+    </g>
+  </svg>
+
+  <!-- Floating Ambient Orbs -->
+  <circle cx="150" cy="150" r="250" fill="url(#glowCyan)">
+    <animate attributeName="cx" values="150; 250; 150" dur="15s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="650" cy="200" r="300" fill="url(#glowPurple)">
+    <animate attributeName="cy" values="200; 100; 200" dur="20s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Mac Window Header -->
+  <circle cx="30" cy="26" r="6" class="dot-red" />
+  <circle cx="50" cy="26" r="6" class="dot-yellow" />
+  <circle cx="70" cy="26" r="6" class="dot-green" />
+  <text x="410" y="32" fill="#8b949e" font-family="ui-monospace, monospace" font-size="14px" text-anchor="middle" font-weight="600">amu@macbook: ~/agi-workspace</text>
+  <line x1="0" y1="52" x2="820" y2="52" stroke="#30363d" stroke-width="1" />
+
+  <!-- Syntax Highlighted Code (Measured by pretext) -->
+  <g transform="translate(0, 90)">
+<g class="line-anim delay-0"><text x="25" y="0" fill="#484f58" font-family="ui-monospace, monospace" font-size="14px" text-anchor="end">1</text><text x="40" y="0" fill="#ff7b72" class="code-text">const </text><text x="97.6" y="0" fill="#79c0ff" class="code-text">amu </text><text x="136" y="0" fill="#c9d1d9" class="code-text">= </text><text x="155.2" y="0" fill="#ffd700" class="code-text">{</text></g><g class="line-anim delay-1"><text x="25" y="32" fill="#484f58" font-family="ui-monospace, monospace" font-size="14px" text-anchor="end">2</text><text x="40" y="32" fill="#79c0ff" class="code-text">  roles</text><text x="107.2" y="32" fill="#c9d1d9" class="code-text">: </text><text x="126.4" y="32" fill="#da70d6" class="code-text">[</text><text x="136" y="32" fill="#a5d6ff" class="code-text">"NLPer"</text><text x="203.2" y="32" fill="#c9d1d9" class="code-text">, </text><text x="222.4" y="32" fill="#a5d6ff" class="code-text">"RLer"</text><text x="280" y="32" fill="#c9d1d9" class="code-text">, </text><text x="299.2" y="32" fill="#a5d6ff" class="code-text">"Open Source Enthusiast"</text><text x="529.6" y="32" fill="#da70d6" class="code-text">]</text><text x="539.2" y="32" fill="#c9d1d9" class="code-text">,</text></g><g class="line-anim delay-2"><text x="25" y="64" fill="#484f58" font-family="ui-monospace, monospace" font-size="14px" text-anchor="end">3</text><text x="40" y="64" fill="#79c0ff" class="code-text">  mission</text><text x="126.4" y="64" fill="#c9d1d9" class="code-text">: </text><text x="145.6" y="64" fill="#a5d6ff" class="code-text">"Building AGI... Maybe?"</text><text x="376" y="64" fill="#c9d1d9" class="code-text">,</text></g><g class="line-anim delay-3"><text x="25" y="96" fill="#484f58" font-family="ui-monospace, monospace" font-size="14px" text-anchor="end">4</text><text x="40" y="96" fill="#79c0ff" class="code-text">  motto</text><text x="107.2" y="96" fill="#c9d1d9" class="code-text">: </text><text x="126.4" y="96" fill="#a5d6ff" class="code-text">"Keep Learning | Keep Coding | Keep Writing"</text></g><g class="line-anim delay-4"><text x="25" y="128" fill="#484f58" font-family="ui-monospace, monospace" font-size="14px" text-anchor="end">5</text><text x="40" y="128" fill="#ffd700" class="code-text">};</text></g><g class="line-anim delay-5"><text x="25" y="160" fill="#484f58" font-family="ui-monospace, monospace" font-size="14px" text-anchor="end">6</text><text x="40" y="160" fill="transparent" class="code-text"></text></g><g class="line-anim delay-6"><text x="25" y="192" fill="#484f58" font-family="ui-monospace, monospace" font-size="14px" text-anchor="end">7</text><text x="40" y="192" fill="#79c0ff" class="code-text">amu</text><text x="68.8" y="192" fill="#c9d1d9" class="code-text">.</text><text x="78.4" y="192" fill="#d2a8ff" class="code-text">execute</text><text x="145.6" y="192" fill="#c9d1d9" class="code-text">();</text></g><rect x="179.4" y="177" width="10" height="20" class="cursor delay-6" /></g></svg>

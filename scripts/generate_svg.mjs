@@ -13,14 +13,6 @@ const __dirname = path.dirname(__filename);
   const htmlContent = `
     <!DOCTYPE html>
     <html>
-      <head>
-        <style>
-          @font-face {
-            font-family: 'SysMono';
-            src: local('ui-monospace'), local('SFMono-Regular'), local('Menlo'), local('Consolas'), local('monospace');
-          }
-        </style>
-      </head>
       <body>
         <script type="module">
           import { prepareWithSegments, layoutWithLines } from 'https://esm.sh/@chenglou/pretext@1.0.6';
@@ -28,68 +20,190 @@ const __dirname = path.dirname(__filename);
           window.generate = async () => {
             await document.fonts.ready;
 
-            const text1 = "NLPer · RLer · Open Source Enthusiast";
-            const text2 = "Building AGI... Maybe?";
-            const text3 = "Keep Learning | Keep Coding | Keep Writing";
-            
-            const font = '700 20px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace';
-            
-            const p1 = prepareWithSegments(text1, font);
-            const p2 = prepareWithSegments(text2, font);
-            const p3 = prepareWithSegments(text3, font);
-            
-            const l1 = layoutWithLines(p1, 800, 30);
-            const l2 = layoutWithLines(p2, 800, 30);
-            const l3 = layoutWithLines(p3, 800, 30);
+            const font = '700 18px ui-monospace, SFMono-Regular, "Cascadia Code", Menlo, Consolas, monospace';
 
-            let svg = \`<svg width="820" height="220" xmlns="http://www.w3.org/2000/svg">
+            // We break down the profile into syntax-highlighted code tokens.
+            const codeLines = [
+              [
+                { text: "const ", color: "#ff7b72" },
+                { text: "amu ", color: "#79c0ff" },
+                { text: "= ", color: "#c9d1d9" },
+                { text: "{", color: "#ffd700" }
+              ],
+              [
+                { text: "  roles", color: "#79c0ff" },
+                { text: ": ", color: "#c9d1d9" },
+                { text: "[", color: "#da70d6" },
+                { text: '"NLPer"', color: "#a5d6ff" },
+                { text: ", ", color: "#c9d1d9" },
+                { text: '"RLer"', color: "#a5d6ff" },
+                { text: ", ", color: "#c9d1d9" },
+                { text: '"Open Source Enthusiast"', color: "#a5d6ff" },
+                { text: "]", color: "#da70d6" },
+                { text: ",", color: "#c9d1d9" }
+              ],
+              [
+                { text: "  mission", color: "#79c0ff" },
+                { text: ": ", color: "#c9d1d9" },
+                { text: '"Building AGI... Maybe?"', color: "#a5d6ff" },
+                { text: ",", color: "#c9d1d9" }
+              ],
+              [
+                { text: "  motto", color: "#79c0ff" },
+                { text: ": ", color: "#c9d1d9" },
+                { text: '"Keep Learning | Keep Coding | Keep Writing"', color: "#a5d6ff" }
+              ],
+              [
+                { text: "};", color: "#ffd700" }
+              ],
+              [
+                { text: "", color: "transparent" } // Empty line
+              ],
+              [
+                { text: "amu", color: "#79c0ff" },
+                { text: ".", color: "#c9d1d9" },
+                { text: "execute", color: "#d2a8ff" },
+                { text: "();", color: "#c9d1d9" }
+              ]
+            ];
+
+            let svg = \`<svg width="820" height="360" xmlns="http://www.w3.org/2000/svg">
               <defs>
+                <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#050505" />
+                  <stop offset="100%" stop-color="#0f111a" />
+                </linearGradient>
+                
+                <!-- Glowing Ambient Orbs -->
+                <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(88, 166, 255, 0.15)" />
+                  <stop offset="100%" stop-color="rgba(88, 166, 255, 0)" />
+                </radialGradient>
+                <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(210, 168, 255, 0.12)" />
+                  <stop offset="100%" stop-color="rgba(210, 168, 255, 0)" />
+                </radialGradient>
+
                 <style>
-                  .window { fill: #0d1117; stroke: #30363d; stroke-width: 1px; rx: 8px; }
+                  .window { fill: url(#bgGrad); stroke: #30363d; stroke-width: 1px; rx: 12px; }
                   .dot-red { fill: #ff5f56; }
                   .dot-yellow { fill: #ffbd2e; }
                   .dot-green { fill: #28c840; }
-                  .text {
-                    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-                    font-weight: 700;
-                    font-size: 20px;
-                  }
-                  .line1 { fill: #58a6ff; opacity: 0; animation: fadeUp 0.8s ease-out 0.2s forwards; }
-                  .line2 { fill: #bc8cff; opacity: 0; animation: fadeUp 0.8s ease-out 0.6s forwards; }
-                  .line3 { fill: #ff7b72; opacity: 0; animation: fadeUp 0.8s ease-out 1.0s forwards; }
-                  .cursor { fill: #c9d1d9; opacity: 0; animation: blink 1s step-end 1.5s infinite; }
                   
-                  @keyframes fadeUp {
-                    from { opacity: 0; transform: translateY(10px); }
-                    to { opacity: 1; transform: translateY(0); filter: drop-shadow(0 0 4px currentColor); }
+                  .code-text {
+                    font-family: ui-monospace, SFMono-Regular, "Cascadia Code", Menlo, Consolas, monospace;
+                    font-weight: 700;
+                    font-size: 16px;
+                    white-space: pre;
                   }
+                  
+                  /* Staggered Slide In Animation */
+                  .line-anim {
+                    opacity: 0;
+                    animation: slideRight 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+                  }
+                  .delay-0 { animation-delay: 0.2s; }
+                  .delay-1 { animation-delay: 0.4s; }
+                  .delay-2 { animation-delay: 0.6s; }
+                  .delay-3 { animation-delay: 0.8s; }
+                  .delay-4 { animation-delay: 1.0s; }
+                  .delay-5 { animation-delay: 1.2s; }
+                  .delay-6 { animation-delay: 1.4s; }
+
+                  .cursor {
+                    fill: #58a6ff;
+                    opacity: 0;
+                    animation: blink 1s step-end infinite;
+                    animation-delay: 2.0s; /* Start blinking after typing */
+                  }
+
+                  @keyframes slideRight {
+                    from { opacity: 0; transform: translateX(-15px); }
+                    to { opacity: 1; transform: translateX(0); }
+                  }
+
                   @keyframes blink {
-                    0%, 100% { opacity: 1; }
+                    0%, 100% { opacity: 1; filter: drop-shadow(0 0 4px #58a6ff); }
                     50% { opacity: 0; }
                   }
+
+                  /* Background panning grid */
+                  .grid-group { animation: panGrid 20s linear infinite; }
+                  @keyframes panGrid {
+                    from { transform: translateY(0); }
+                    to { transform: translateY(40px); }
+                  }
                 </style>
+                
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                  <path d="M 0 40 L 40 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                </pattern>
               </defs>
-              <rect x="10" y="10" width="800" height="200" class="window" />
-              <circle cx="35" cy="30" r="6" class="dot-red" />
-              <circle cx="55" cy="30" r="6" class="dot-yellow" />
-              <circle cx="75" cy="30" r="6" class="dot-green" />
-              <g transform="translate(0, 80)">
+
+              <!-- Deep Space Background & Grid -->
+              <rect width="820" height="360" class="window" />
+              
+              <svg width="820" height="360" viewBox="0 0 820 360">
+                <g class="grid-group">
+                  <rect x="0" y="-40" width="820" height="440" fill="url(#grid)" />
+                </g>
+              </svg>
+
+              <!-- Floating Ambient Orbs -->
+              <circle cx="150" cy="150" r="250" fill="url(#glowCyan)">
+                <animate attributeName="cx" values="150; 250; 150" dur="15s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="650" cy="200" r="300" fill="url(#glowPurple)">
+                <animate attributeName="cy" values="200; 100; 200" dur="20s" repeatCount="indefinite" />
+              </circle>
+
+              <!-- Mac Window Header -->
+              <circle cx="30" cy="26" r="6" class="dot-red" />
+              <circle cx="50" cy="26" r="6" class="dot-yellow" />
+              <circle cx="70" cy="26" r="6" class="dot-green" />
+              <text x="410" y="32" fill="#8b949e" font-family="ui-monospace, monospace" font-size="14px" text-anchor="middle" font-weight="600">amu@macbook: ~/agi-workspace</text>
+              <line x1="0" y1="52" x2="820" y2="52" stroke="#30363d" stroke-width="1" />
+
+              <!-- Syntax Highlighted Code (Measured by pretext) -->
+              <g transform="translate(0, 90)">
             \`;
             
-            const drawLines = (lines, startY, className) => {
-              for (let i = 0; i < lines.length; i++) {
-                const y = startY + i * 40;
-                const x = (820 - lines[i].width) / 2;
-                svg += \`<text x="\${x}" y="\${y}" class="text \${className}">\${lines[i].text}</text>\\n\`;
+            let currentY = 0;
+            let lastX = 40;
+            let lastY = 0;
+
+            codeLines.forEach((line, lineIndex) => {
+              let currentX = 40; // padding left
+              let lineSvg = \`<g class="line-anim delay-\${lineIndex}">\`;
+
+              // Render line number
+              lineSvg += \`<text x="25" y="\${currentY}" fill="#484f58" font-family="ui-monospace, monospace" font-size="14px" text-anchor="end">\${lineIndex + 1}</text>\`;
+
+              line.forEach(segment => {
+                // IMPORTANT: we tell pretext to preserve all spaces (pre-wrap) so we can stitch tokens perfectly
+                const p = prepareWithSegments(segment.text, font, { whiteSpace: 'pre-wrap' });
+                const layout = layoutWithLines(p, 1000, 30);
+                
+                // Fallback width estimation if pretext fails for any reason
+                const width = layout.lines[0]?.width || (segment.text.length * 9.6);
+
+                lineSvg += \`<text x="\${currentX}" y="\${currentY}" fill="\${segment.color}" class="code-text">\${segment.text}</text>\`;
+                currentX += width;
+              });
+
+              lineSvg += \`</g>\`;
+              svg += lineSvg;
+              
+              if (line.length > 0 && line[0].text !== "") {
+                lastX = currentX;
+                lastY = currentY;
               }
-            };
+              currentY += 32;
+            });
 
-            drawLines(l1.lines, 0, 'line1');
-            drawLines(l2.lines, 40, 'line2');
-            drawLines(l3.lines, 80, 'line3');
-
-            // Hardcode cursor position for the fallback display
-            svg += \`<rect x="680" y="62" width="12" height="22" class="cursor" />\`;
+            // The Blinking Cursor
+            svg += \`<rect x="\${lastX + 5}" y="\${lastY - 15}" width="10" height="20" class="cursor delay-6" />\`;
 
             svg += \`</g></svg>\`;
             return svg;
