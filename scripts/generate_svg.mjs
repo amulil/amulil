@@ -67,7 +67,7 @@ const __dirname = path.dirname(__filename);
               ]
             ];
 
-            let svg = \`<svg width="820" height="360" xmlns="http://www.w3.org/2000/svg">
+            let svg = \`<svg width="820" height="330" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#050505" />
@@ -142,9 +142,9 @@ const __dirname = path.dirname(__filename);
               </defs>
 
               <!-- Deep Space Background & Grid -->
-              <rect width="820" height="360" class="window" />
+              <rect width="820" height="330" class="window" />
               
-              <svg width="820" height="360" viewBox="0 0 820 360">
+              <svg width="820" height="330" viewBox="0 0 820 330">
                 <g class="grid-group">
                   <rect x="0" y="-40" width="820" height="440" fill="url(#grid)" />
                 </g>
