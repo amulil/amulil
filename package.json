@@ -1,0 +1,13 @@
+{
+  "name": "amulil-readme",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:svg": "node scripts/generate_svg.mjs"
+  },
+  "dependencies": {
+    "@chenglou/pretext": "^1.0.0",
+    "puppeteer": "^22.0.0"
+  }
+}

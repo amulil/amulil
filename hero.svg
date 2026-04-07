@@ -1,0 +1,25 @@
+<svg width="820" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&amp;display=swap');
+      .text {
+        font-family: 'Fira Code', monospace;
+        font-weight: 700;
+        font-size: 28px;
+        text-anchor: middle;
+      }
+      .line1 { animation: fadeUp 1.2s ease-out forwards; opacity: 0; fill: #38bdf8; }
+      .line2 { animation: fadeUp 1.2s ease-out 0.6s forwards; opacity: 0; fill: #f472b6; }
+      .line3 { animation: fadeUp 1.2s ease-out 1.2s forwards; opacity: 0; fill: #a78bfa; }
+      
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </defs>
+  <rect width="820" height="200" fill="transparent" />
+  <text x="410" y="60" class="text line1">NLPer · RLer · Open Source Enthusiast</text>
+  <text x="410" y="110" class="text line2">Building AGI... Maybe?</text>
+  <text x="410" y="160" class="text line3">Keep Learning | Keep Coding | Keep Writing</text>
+</svg>
