@@ -46,10 +46,21 @@ const __dirname = path.dirname(__filename);
                     font-weight: 700;
                     font-size: 28px;
                     text-anchor: middle;
+                    transition: all 0.3s ease;
+                    cursor: crosshair;
+                  }
+                  .text:hover {
+                    font-size: 32px;
+                    filter: drop-shadow(0 0 8px currentColor);
                   }
                   .line1 { animation: fadeUp 1.2s ease-out forwards; opacity: 0; fill: #38bdf8; }
+                  .line1:hover { fill: #7dd3fc; transform: translateY(-5px); }
+                  
                   .line2 { animation: fadeUp 1.2s ease-out 0.6s forwards; opacity: 0; fill: #f472b6; }
+                  .line2:hover { fill: #f9a8d4; transform: translateY(-5px); }
+                  
                   .line3 { animation: fadeUp 1.2s ease-out 1.2s forwards; opacity: 0; fill: #a78bfa; }
+                  .line3:hover { fill: #c4b5fd; transform: translateY(-5px); }
                   
                   @keyframes fadeUp {
                     from { opacity: 0; transform: translateY(20px); }
@@ -58,6 +69,10 @@ const __dirname = path.dirname(__filename);
                 </style>
               </defs>
               <rect width="820" height="200" fill="transparent" />
+              <!-- Invisible rects for better hover hitboxes -->
+              <rect x="0" y="30" width="820" height="40" fill="transparent" class="hitbox" />
+              <rect x="0" y="80" width="820" height="40" fill="transparent" class="hitbox" />
+              <rect x="0" y="130" width="820" height="40" fill="transparent" class="hitbox" />
             \`;
             
             // For text-anchor: middle, x should be 50% (410)
