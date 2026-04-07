@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:svg": "node scripts/generate_svg.mjs && node scripts/generate_blogs_svg.mjs"
+    "build:svg": "node scripts/generate_svg.mjs"
   },
   "dependencies": {
     "@chenglou/pretext": "^1.0.0",

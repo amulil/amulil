@@ -1,25 +1,47 @@
-<svg width="820" height="200" xmlns="http://www.w3.org/2000/svg">
+<svg width="820" height="220" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&amp;display=swap');
+      .window { fill: #0d1117; stroke: #30363d; stroke-width: 1px; rx: 8px; }
+      .dot-red { fill: #ff5f56; }
+      .dot-yellow { fill: #ffbd2e; }
+      .dot-green { fill: #28c840; }
       .text {
-        font-family: 'Fira Code', monospace;
+        font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
         font-weight: 700;
-        font-size: 28px;
+        font-size: 20px;
         text-anchor: middle;
       }
-      .line1 { animation: fadeUp 1.2s ease-out forwards; opacity: 0; fill: #38bdf8; }
-      .line2 { animation: fadeUp 1.2s ease-out 0.6s forwards; opacity: 0; fill: #f472b6; }
-      .line3 { animation: fadeUp 1.2s ease-out 1.2s forwards; opacity: 0; fill: #a78bfa; }
+      .line1 { fill: #58a6ff; opacity: 0; animation: fadeUp 0.8s ease-out 0.2s forwards; }
+      .line2 { fill: #bc8cff; opacity: 0; animation: fadeUp 0.8s ease-out 0.6s forwards; }
+      .line3 { fill: #ff7b72; opacity: 0; animation: fadeUp 0.8s ease-out 1.0s forwards; }
+      .cursor { fill: #c9d1d9; opacity: 0; animation: blink 1s step-end 1.5s infinite; }
       
       @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); filter: drop-shadow(0 0 4px currentColor); }
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
       }
     </style>
   </defs>
-  <rect width="820" height="200" fill="transparent" />
-  <text x="410" y="60" class="text line1">NLPer · RLer · Open Source Enthusiast</text>
-  <text x="410" y="110" class="text line2">Building AGI... Maybe?</text>
-  <text x="410" y="160" class="text line3">Keep Learning | Keep Coding | Keep Writing</text>
+  
+  <!-- Window Background -->
+  <rect x="10" y="10" width="800" height="200" class="window" />
+  
+  <!-- Mac Window Dots -->
+  <circle cx="35" cy="30" r="6" class="dot-red" />
+  <circle cx="55" cy="30" r="6" class="dot-yellow" />
+  <circle cx="75" cy="30" r="6" class="dot-green" />
+  
+  <!-- Content (Centered) -->
+  <g transform="translate(0, 80)">
+    <text x="410" y="0" class="text line1">NLPer · RLer · Open Source Enthusiast</text>
+    <text x="410" y="40" class="text line2">Building AGI... Maybe?</text>
+    <text x="410" y="80" class="text line3">Keep Learning | Keep Coding | Keep Writing</text>
+    
+    <!-- Blinking Cursor -->
+    <rect x="680" y="62" width="12" height="22" class="cursor" />
+  </g>
 </svg>

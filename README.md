@@ -64,10 +64,6 @@
 
 ### ✍️ Latest Blogs
 
-<div align="center">
-  <img src="./blogs.svg" alt="Latest Blogs" width="820" />
-</div>
-
 <!-- BLOG-POST-LIST:START -->
 - [深度强化学习（DRL）算法 2 —— PPO 之 GRPO 篇](https://zhuanlan.zhihu.com/p/78311742210)
 - [AI Infra 01 - Paged Attention：大语言模型推理的内存优化利器](https://zhuanlan.zhihu.com/p/1935459286135309179)

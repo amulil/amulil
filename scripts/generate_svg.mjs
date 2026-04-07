@@ -14,7 +14,12 @@ const __dirname = path.dirname(__filename);
     <!DOCTYPE html>
     <html>
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+          @font-face {
+            font-family: 'SysMono';
+            src: local('ui-monospace'), local('SFMono-Regular'), local('Menlo'), local('Consolas'), local('monospace');
+          }
+        </style>
       </head>
       <body>
         <script type="module">
@@ -27,67 +32,66 @@ const __dirname = path.dirname(__filename);
             const text2 = "Building AGI... Maybe?";
             const text3 = "Keep Learning | Keep Coding | Keep Writing";
             
-            const font = '700 28px "Fira Code"';
+            const font = '700 20px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace';
             
             const p1 = prepareWithSegments(text1, font);
             const p2 = prepareWithSegments(text2, font);
             const p3 = prepareWithSegments(text3, font);
             
-            const l1 = layoutWithLines(p1, 820, 36);
-            const l2 = layoutWithLines(p2, 820, 36);
-            const l3 = layoutWithLines(p3, 820, 36);
+            const l1 = layoutWithLines(p1, 800, 30);
+            const l2 = layoutWithLines(p2, 800, 30);
+            const l3 = layoutWithLines(p3, 800, 30);
 
-            let svg = \`<svg width="820" height="200" xmlns="http://www.w3.org/2000/svg">
+            let svg = \`<svg width="820" height="220" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <style>
-                  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap');
+                  .window { fill: #0d1117; stroke: #30363d; stroke-width: 1px; rx: 8px; }
+                  .dot-red { fill: #ff5f56; }
+                  .dot-yellow { fill: #ffbd2e; }
+                  .dot-green { fill: #28c840; }
                   .text {
-                    font-family: 'Fira Code', monospace;
+                    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
                     font-weight: 700;
-                    font-size: 28px;
-                    text-anchor: middle;
-                    transition: all 0.3s ease;
-                    cursor: crosshair;
+                    font-size: 20px;
                   }
-                  .text:hover {
-                    font-size: 32px;
-                    filter: drop-shadow(0 0 8px currentColor);
-                  }
-                  .line1 { animation: fadeUp 1.2s ease-out forwards; opacity: 0; fill: #38bdf8; }
-                  .line1:hover { fill: #7dd3fc; transform: translateY(-5px); }
-                  
-                  .line2 { animation: fadeUp 1.2s ease-out 0.6s forwards; opacity: 0; fill: #f472b6; }
-                  .line2:hover { fill: #f9a8d4; transform: translateY(-5px); }
-                  
-                  .line3 { animation: fadeUp 1.2s ease-out 1.2s forwards; opacity: 0; fill: #a78bfa; }
-                  .line3:hover { fill: #c4b5fd; transform: translateY(-5px); }
+                  .line1 { fill: #58a6ff; opacity: 0; animation: fadeUp 0.8s ease-out 0.2s forwards; }
+                  .line2 { fill: #bc8cff; opacity: 0; animation: fadeUp 0.8s ease-out 0.6s forwards; }
+                  .line3 { fill: #ff7b72; opacity: 0; animation: fadeUp 0.8s ease-out 1.0s forwards; }
+                  .cursor { fill: #c9d1d9; opacity: 0; animation: blink 1s step-end 1.5s infinite; }
                   
                   @keyframes fadeUp {
-                    from { opacity: 0; transform: translateY(20px); }
-                    to { opacity: 1; transform: translateY(0); }
+                    from { opacity: 0; transform: translateY(10px); }
+                    to { opacity: 1; transform: translateY(0); filter: drop-shadow(0 0 4px currentColor); }
+                  }
+                  @keyframes blink {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0; }
                   }
                 </style>
               </defs>
-              <rect width="820" height="200" fill="transparent" />
-              <!-- Invisible rects for better hover hitboxes -->
-              <rect x="0" y="30" width="820" height="40" fill="transparent" class="hitbox" />
-              <rect x="0" y="80" width="820" height="40" fill="transparent" class="hitbox" />
-              <rect x="0" y="130" width="820" height="40" fill="transparent" class="hitbox" />
+              <rect x="10" y="10" width="800" height="200" class="window" />
+              <circle cx="35" cy="30" r="6" class="dot-red" />
+              <circle cx="55" cy="30" r="6" class="dot-yellow" />
+              <circle cx="75" cy="30" r="6" class="dot-green" />
+              <g transform="translate(0, 80)">
             \`;
             
-            // For text-anchor: middle, x should be 50% (410)
             const drawLines = (lines, startY, className) => {
               for (let i = 0; i < lines.length; i++) {
                 const y = startY + i * 40;
-                svg += \`<text x="410" y="\${y}" class="text \${className}">\${lines[i].text}</text>\\n\`;
+                const x = (820 - lines[i].width) / 2;
+                svg += \`<text x="\${x}" y="\${y}" class="text \${className}">\${lines[i].text}</text>\\n\`;
               }
             };
 
-            drawLines(l1.lines, 60, 'line1');
-            drawLines(l2.lines, 110, 'line2');
-            drawLines(l3.lines, 160, 'line3');
+            drawLines(l1.lines, 0, 'line1');
+            drawLines(l2.lines, 40, 'line2');
+            drawLines(l3.lines, 80, 'line3');
 
-            svg += \`</svg>\`;
+            // Hardcode cursor position for the fallback display
+            svg += \`<rect x="680" y="62" width="12" height="22" class="cursor" />\`;
+
+            svg += \`</g></svg>\`;
             return svg;
           };
           window.moduleLoaded = true;
@@ -101,6 +105,6 @@ const __dirname = path.dirname(__filename);
   const svg = await page.evaluate(() => window.generate());
   
   fs.writeFileSync(path.join(process.cwd(), 'hero.svg'), svg);
-  console.log('SVG generated successfully!');
+  console.log('Hero SVG generated successfully!');
   await browser.close();
 })();
